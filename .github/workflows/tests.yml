@@ -24,8 +24,14 @@ jobs:
         with:
           node-version: '15.x'
 
-      - name: Run PHP Test
+      - name: Run PHP isolated Test
         run: php tests/test-encrypt-decrypt.php
+
+      - name: Run NodeJs isolated Test
+        run: node tests/test-encrypt-decrypt.js
+
+      - name: Run PHP<->JS Tests
+        run: node tests/test-js-php.js && php tests/test-js-php.php
 
 #      - name: Install Playwright Browsers
 #        run: npx playwright install --with-deps
