@@ -9,7 +9,6 @@ jobs:
     strategy:
       matrix:
         phpversion: ["8.0", "8.1", "8.2", "8.3"]
-        os: [ubuntu-latest]
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
@@ -26,7 +25,7 @@ jobs:
           node-version: '15.x'
 
       - name: Run PHP Test
-        run: php-${{ matrix.phpversion }} tests/test-encrypt-decrypt.php
+        run: php tests/test-encrypt-decrypt.php
 
 #      - name: Install Playwright Browsers
 #        run: npx playwright install --with-deps
