@@ -22,7 +22,7 @@ jobs:
           extensions: openssl
 
       - name: Setup Node ${{ matrix.nodeversion }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.nodeversion }}
 
