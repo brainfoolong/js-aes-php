@@ -1,3 +1,5 @@
+[![PHP and JS Tests](https://github.com/brainfoolong/js-aes-php/actions/workflows/tests.yml/badge.svg)](https://github.com/brainfoolong/js-aes-php/actions/workflows/tests.yml)
+
 # Slim native AES encryption/decryption on client side with Javascript and on server side with PHP
 
 A tool to AES encrypt/decrypt data in javascript and/or PHP. You can use it for PHP only, for Javascript only or mix it together.
