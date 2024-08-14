@@ -71,7 +71,7 @@ class JsAesPhp {
             // @ts-ignore
             if (typeof module !== 'undefined' && module.exports) {
                 // @ts-ignore
-                this.crypto = require('crypto');
+                this.crypto = require('crypto').webcrypto;
                 return this.crypto;
             }
         }
