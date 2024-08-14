@@ -1,0 +1,19 @@
+*.js text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.ts text eol=lf
+*.html text eol=lf
+*.txt text eol=lf
+*.min.js binary
+vendor/* binary
+
+.github export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+.npmignore export-ignore
+.npmrc export-ignore
+build export-ignore
+tests export-ignore
+playwright.config.ts export-ignore
+tsconfig.json export-ignore
+package-lock.json export-ignore

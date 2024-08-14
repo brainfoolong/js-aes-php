@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS AES PHP Browser Tests</title>
+    <script src="../dist/js-aes-php.js"></script>
+    <script>
+      function require (file) {
+        if (file.endsWith('/js-aes-php')) {
+          return JsAesPhp
+        }
+        const script = document.createElement('script')
+        script.src = file
+        document.head.append(script)
+      }
+
+      const consoleLog = console.log
+      console.log = function (msg) {
+        consoleLog(msg)
+        document.getElementById('console').innerHTML += msg + '<br/>'
+      }
+
+    </script>
+    <script src="../tests/test-encrypt-decrypt.js"></script>
+</head>
+<body>
+<div id="console"></div>
+</body>
+</html>
