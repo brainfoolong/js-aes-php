@@ -9,6 +9,7 @@ jobs:
     strategy:
       matrix:
         phpversion: ["8.0", "8.1", "8.2", "8.3"]
+        nodeversion: ["15.x", "22.x"]
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
@@ -20,9 +21,10 @@ jobs:
           php-version: ${{ matrix.phpversion }}
           extensions: openssl
 
-      - uses: actions/setup-node@v2
+      - name: Setup Node ${{ matrix.nodeversion }}
+        uses: actions/setup-node@v2
         with:
-          node-version: '15.x'
+          node-version: ${{ matrix.nodeversion }}
 
       - name: Run PHP isolated Test
         run: php tests/test-encrypt-decrypt.php
