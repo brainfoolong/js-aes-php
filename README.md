@@ -1,4 +1,4 @@
-[![PHP and JS Tests](https://github.com/brainfoolong/js-aes-php/actions/workflows/tests.yml/badge.svg)](https://github.com/brainfoolong/js-aes-php/actions/workflows/tests.yml)
+[![PHP and JS Tests](https://github.com/brainfoolong/js-aes-php/actions/workflows/test-php-js.yml/badge.svg)](https://github.com/brainfoolong/js-aes-php/actions/workflows/test-php-js.yml)
 
 # Slim native AES encryption/decryption on client side with Javascript and on server side with PHP
 
