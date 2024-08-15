@@ -48,3 +48,10 @@ library: https://stackoverflow.com/questions/16600708/how-do-you-encrypt-and-dec
 ### Alternatives - ASCON
 
 You may wonder if there are alternatives to AES encryption that you can use in PHP/JS. ASCON is a newer, lightweight cipher that have been selected in 2023 by the [NIST](https://csrc.nist.gov/projects/lightweight-cryptography) as the new standard for lightweight cryptography, which may suite your needs. I have created libraries for both PHP and JS which you can find at https://github.com/brainfoolong/php-ascon and https://github.com/brainfoolong/js-ascon
+
+
+### Changelog
+
+#### 1.0.1 - 2024-08-14
+
+Initial Public Release

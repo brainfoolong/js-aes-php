@@ -1,4 +1,6 @@
 *
 !dist/*
-!src/*
-!CHANGELOG.md
+!src/ts/*
+!README.md
+!LICENSE
+!package.json

@@ -20,7 +20,7 @@ jobs:
         run: npm install -y
 
       - name: Start testserver
-        run: node tests/test-browser-server.js
+        run: node tests/test-browser-server.js &
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
