@@ -1,0 +1,43 @@
+{
+  "name": "brainfoolong/js-aes-php",
+  "type": "library",
+  "description": "CSlim native AES encryption/decryption on client side with Javascript and on server side with PHP",
+  "keywords": [
+    "aes",
+    "php",
+    "javascript",
+    "encryption"
+  ],
+  "homepage": "https://github.com/brainfoolong/js-aes-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Roland Eigelsreiter",
+      "homepage": "https://github.com/brainfoolong/js-aes-php",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Nullix\\JsAesPhp\\": "src/php"
+    }
+  },
+  "archive": {
+    "exclude": [
+      "/build",
+      "/dist",
+      "/tests",
+      ".gitignore",
+      ".gitattributes",
+      ".npmignore",
+      "package.json",
+      "playwright.config.ts"
+    ]
+  },
+  "version": "1.0.1",
+  "require": {
+    "php": ">=8.0.0",
+    "ext-openssl": "*",
+    "ext-json": "*"
+  }
+}
