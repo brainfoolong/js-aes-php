@@ -1,7 +1,7 @@
 {
   "name": "brainfoolong/js-aes-php",
   "type": "library",
-  "description": "CSlim native AES encryption/decryption on client side with Javascript and on server side with PHP",
+  "description": "Slim native AES encryption/decryption on client side with Javascript and on server side with PHP",
   "keywords": [
     "aes",
     "php",
