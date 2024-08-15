@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/brainfoolong/js-aes-php",
   "devDependencies": {
+    "@playwright/test": "^1.46.0",
     "typescript": "^5.5.4"
   },
   "engines": {
