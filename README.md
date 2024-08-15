@@ -16,6 +16,12 @@ This library is the successor to my previous [CryptoJs-Aea-Php](https://github.c
 * It is safe to store and transfer the encrypted values, as the encrypted output only contains hex characters (0-9 A-F)
 * Small footprint: 5kb unzipped Javascript file
 
+
+### Install
+* NPM: `npm i js-aes-php`
+* Composer: `composer require brainfoolong/js-aes-php`
+* Or just download the latest release zip for everything at once
+
 ### Requirements
 * For Javascript: Any [recent Browser](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt#browser_compatibility) or Node environment (15+)
 * For Typescript: Use `src/ts/js-aes-php.ts`
