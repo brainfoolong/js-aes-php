@@ -7,13 +7,13 @@ A tool to AES encrypt/decrypt data in javascript and/or PHP. You can use it for 
 
 It uses `aes-256-cbc` implementation with random salts and random initialization vector. This library does not support other ciphers or modes.
 
-This library is the successor to my previous [CryptoJs-Aea-Php](https://github.com/brainfoolong/cryptojs-aes-php) encryption library that required CryptoJS. This library does not require any third party dependency as modern browsers and Node now have proper crypto tools built in. Attention: This library does output different encryption values to my previous library, it cannot be a drop-in replacement.
+This library is the successor to my previous [CryptoJs-Aes-Php](https://github.com/brainfoolong/cryptojs-aes-php) encryption library that required CryptoJS. This library does not require any third party dependency as modern browsers and Node now have proper crypto tools built in. Attention: This library does output different encryption values to my previous library, it cannot be a drop-in replacement.
 
 ### Features
 * Encrypt any value in Javascript (objects/array/etc...) - Everything that can be passed to JSON.stringify
 * Encrypt any value in PHP (object/array/etc...) - Everything that can be passed to json_encode
 * Decrypt in PHP/Javascript, doesn't matter where you have encrypted the values
-* It is safe to store and transfer the encrypted values, as the encrypted output only contains hex characters (0-9 A-F)
+* Easy store and transfer the encrypted values, the encrypted output only contains hex characters (0-9 A-F)
 * Small footprint: 5kb unzipped Javascript file
 
 
