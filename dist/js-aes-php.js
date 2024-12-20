@@ -1,4 +1,4 @@
-// JsAesPhp v1.0.1 @ https://github.com/brainfoolong/js-aes-php
+// JsAesPhp v1.0.2 @ https://github.com/brainfoolong/js-aes-php
 class JsAesPhp {
     /**
      * Encrypt a given value which can be of any kind that can be JSON.stringify'd
@@ -74,9 +74,15 @@ class JsAesPhp {
                 this.crypto = require('crypto').webcrypto;
                 return this.crypto;
             }
+            // web worker support
+            if (typeof self !== 'undefined' && self.crypto) {
+                // @ts-ignore
+                this.crypto = self.crypto;
+                return this.crypto;
+            }
         }
         if (!window.crypto) {
-            throw new Error('Unsupported environment, window.crypto missing');
+            throw new Error('Unsupported environment, crypto missing');
         }
         this.crypto = window.crypto;
         return this.crypto;

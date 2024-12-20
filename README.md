@@ -58,6 +58,10 @@ You may wonder if there are alternatives to AES encryption that you can use in P
 
 ### Changelog
 
+#### 1.0.2 - 2024-12-20
+
+- fixed support for web workers
+
 #### 1.0.1 - 2024-08-14
 
 Initial Public Release

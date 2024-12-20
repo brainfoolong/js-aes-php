@@ -101,9 +101,15 @@ export default class JsAesPhp {
         this.crypto = require('crypto').webcrypto
         return this.crypto
       }
+      // web worker support
+      if (typeof self !== 'undefined' && self.crypto) {
+        // @ts-ignore
+        this.crypto = self.crypto
+        return this.crypto
+      }
     }
     if (!window.crypto) {
-      throw new Error('Unsupported environment, window.crypto missing')
+      throw new Error('Unsupported environment, crypto missing')
     }
     this.crypto = window.crypto
     return this.crypto
