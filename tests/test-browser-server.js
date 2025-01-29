@@ -6,7 +6,9 @@ const port = 6597
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200
-  if (req.url.endsWith('.html')) {
+  if (req.url.endsWith('favicon.ico')) {
+    res.end()
+  } else if (req.url.endsWith('.html')) {
     res.setHeader('Content-Type', 'text/html')
     res.end(fs.readFileSync(__dirname + '/../' + req.url))
   } else if (req.url.endsWith('.js')) {
@@ -15,7 +17,6 @@ const server = http.createServer((req, res) => {
   } else {
     res.statusCode = 404
     res.end()
-    return
   }
 })
 
