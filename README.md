@@ -18,6 +18,7 @@ This library is the successor to my previous [CryptoJs-Aes-Php](https://github.c
 
 
 ### Install
+* Bun: `bun install js-aes-php`
 * NPM: `npm i js-aes-php`
 * Composer: `composer require brainfoolong/js-aes-php`
 * Or just download the latest release zip for everything at once
