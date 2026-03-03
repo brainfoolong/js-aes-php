@@ -1,4 +1,4 @@
-// JsAesPhp v1.0.2 @ https://github.com/brainfoolong/js-aes-php
+// JsAesPhp v1.0.3 @ https://github.com/brainfoolong/js-aes-php
 class JsAesPhp {
     /**
      * Encrypt a given value which can be of any kind that can be JSON.stringify'd
