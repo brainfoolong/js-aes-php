@@ -1,9 +1,10 @@
 {
   "name": "js-aes-php",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Slim native AES encryption/decryption on client side with Javascript and on server side with PHP",
   "scripts": {
-    "dist": "node ./node_modules/typescript/bin/tsc --project tsconfig.json && node build/dist.js"
+    "dist-node": "node ./node_modules/typescript/bin/tsc --project tsconfig.json && node build/dist.js",
+    "dist-bun": "bun run ./node_modules/typescript/bin/tsc --project tsconfig.json && bun run build/dist.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +17,8 @@
   },
   "homepage": "https://github.com/brainfoolong/js-aes-php",
   "devDependencies": {
-    "@playwright/test": "^1.46.0",
-    "typescript": "^5.5.4"
+    "@playwright/test": "^1.58.2",
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=15.0.0"

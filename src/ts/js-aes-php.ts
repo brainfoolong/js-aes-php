@@ -41,9 +41,9 @@ export default class JsAesPhp {
     const key = await this.generateKey(password, this.hexToByteArray(encryptedValue.substring(42, 74)), parseInt(encryptedValue.substring(0, 10)))
     return JSON.parse(new TextDecoder().decode(new Uint8Array(
       await crypto.subtle.decrypt(
-        { name: 'AES-CBC', iv: this.hexToByteArray(encryptedValue.substring(10, 42)) },
+        { name: 'AES-CBC', iv: this.hexToByteArray(encryptedValue.substring(10, 42)) as BufferSource },
         key,
-        this.hexToByteArray(encryptedValue.substring(74))),
+        this.hexToByteArray(encryptedValue.substring(74)) as BufferSource),
     )))
   }
 
@@ -71,7 +71,7 @@ export default class JsAesPhp {
     )
 
     return crypto.subtle.deriveKey(
-      { name: 'PBKDF2', salt, iterations: hashIterations, hash: 'SHA-256' },
+      { name: 'PBKDF2', salt: salt as BufferSource, iterations: hashIterations, hash: 'SHA-256' },
       initialKey,
       { name: 'AES-CBC', length: 256 },
       true,

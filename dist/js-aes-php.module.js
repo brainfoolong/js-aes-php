@@ -50,7 +50,7 @@ export default class JsAesPhp {
         const crypto = this.getCrypto();
         const passwordBytes = new TextEncoder().encode(password);
         const initialKey = await crypto.subtle.importKey('raw', passwordBytes, { name: 'PBKDF2', hash: 'SHA-256' }, false, ['deriveKey']);
-        return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: hashIterations, hash: 'SHA-256' }, initialKey, { name: 'AES-CBC', length: 256 }, true, ['encrypt', 'decrypt']);
+        return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: salt, iterations: hashIterations, hash: 'SHA-256' }, initialKey, { name: 'AES-CBC', length: 256 }, true, ['encrypt', 'decrypt']);
     }
     /**
      * Get crypto instance depending on the environment
