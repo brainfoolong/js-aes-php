@@ -10,22 +10,25 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
       - name: Setup Node 26.x
         uses: actions/setup-node@v6
         with:
           node-version: 26.x
 
-      - name: Install npm dependencies
-        run: npm install -y
+      - name: Install playwright dependencies
+        run: bun install @playwright/test@latest
 
       - name: Start testserver
-        run: node tests/test-browser-server.js &
+        run: bun tests/test-browser-server.js &
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: bun --yes playwright install
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: bun playwright test
 
       - uses: actions/upload-artifact@v7
         if: always()
