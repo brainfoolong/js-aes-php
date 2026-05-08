@@ -7,8 +7,8 @@ jobs:
   tests:
     strategy:
       matrix:
-        phpversion: ["8.0", "8.1", "8.2", "8.3"]
-        nodeversion: ["15.x", "22.x"]
+        phpversion: ["8.0", "8.1", "8.2", "8.3", "8.4", "8.5"]
+        nodeversion: ["15.x", "22.x", "24.x", "26.x"]
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
@@ -25,24 +25,17 @@ jobs:
         with:
           node-version: ${{ matrix.nodeversion }}
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
       - name: Run PHP isolated Test
         run: php tests/test-encrypt-decrypt.php
 
       - name: Run NodeJs isolated Test
         run: node tests/test-encrypt-decrypt.js
 
+      - name: Run BUN isolated Test
+        run: bun tests/test-encrypt-decrypt.ts
+
       - name: Run PHP<->JS Tests
         run: node tests/test-js-php.js && php tests/test-js-php.php
-
-#      - name: Install Playwright Browsers
-#        run: npx playwright install --with-deps
-
-#      - name: Run Playwright tests
-#        run: npx playwright test
-#
-#      - uses: actions/upload-artifact@v2
-#        if: always()
-#        with:
-#          name: playwright-report
-#          path: playwright-report/
-#          retention-days: 30
