@@ -67,6 +67,10 @@ class JsAesPhp {
         if (typeof TextEncoder === 'undefined') {
             throw new Error('Unsupported environment, TextEncoder missing');
         }
+        if (typeof crypto !== 'undefined' && typeof crypto.subtle !== 'undefined' && typeof crypto.subtle.decrypt === 'function') {
+            this.crypto = crypto;
+            return this.crypto;
+        }
         if (typeof window === 'undefined') {
             // @ts-ignore
             if (typeof module !== 'undefined' && module.exports) {
@@ -80,9 +84,10 @@ class JsAesPhp {
                 this.crypto = self.crypto;
                 return this.crypto;
             }
+            throw new Error('Unsupported environment, crypto missing and window not exist');
         }
         if (!window.crypto) {
-            throw new Error('Unsupported environment, crypto missing');
+            throw new Error('Unsupported environment, window.crypto missing');
         }
         this.crypto = window.crypto;
         return this.crypto;
