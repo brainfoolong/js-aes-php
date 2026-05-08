@@ -12,7 +12,7 @@ This library is the successor to my previous [CryptoJs-Aes-Php](https://github.c
 ### Features
 * Encrypt any value in Javascript (objects/array/etc...) - Everything that can be passed to JSON.stringify
 * Encrypt any value in PHP (object/array/etc...) - Everything that can be passed to json_encode
-* Decrypt in PHP/Javascript, doesn't matter where you have encrypted the values
+* Decrypt in PHP/Javascript/Typescript, doesn't matter where you have encrypted the values
 * Easy store and transfer the encrypted values, the encrypted output only contains hex characters (0-9 A-F)
 * Small footprint: 5kb unzipped Javascript file
 
