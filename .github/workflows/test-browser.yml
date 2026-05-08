@@ -8,12 +8,12 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Setup Node 22.x
-        uses: actions/setup-node@v4
+      - name: Setup Node 26.x
+        uses: actions/setup-node@v6
         with:
-          node-version: 22.x
+          node-version: 26.x
 
       - name: Install npm dependencies
         run: npm install -y
@@ -27,7 +27,7 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: playwright-report
