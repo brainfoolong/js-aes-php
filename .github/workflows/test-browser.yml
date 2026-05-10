@@ -5,8 +5,8 @@ on:
     branches: [ main ]
 jobs:
   tests:
-    timeout-minutes: 10
-    runs-on: 	windows-latest
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
 
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node 26.x
         uses: actions/setup-node@v6
         with:
-          node-version: 26.x
+          node-version: latest
 
       - name: Install playwright dependencies
         run: bun install @playwright/test@latest
