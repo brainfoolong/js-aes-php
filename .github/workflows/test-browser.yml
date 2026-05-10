@@ -6,7 +6,7 @@ on:
 jobs:
   tests:
     timeout-minutes: 10
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
 
@@ -21,11 +21,11 @@ jobs:
       - name: Install playwright dependencies
         run: bun install @playwright/test@latest
 
+      - name: Install Playwright Browsers
+        run: bun --yes playwright install /dev/null 2>&1
+
       - name: Start testserver
         run: bun tests/test-browser-server.js &
-
-      - name: Install Playwright Browsers
-        run: bun --yes playwright install
 
       - name: Run Playwright tests
         run: bun playwright test
