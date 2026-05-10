@@ -12,21 +12,21 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: https://github.com/actions/checkout@v6
 
       - name: Setup PHP ${{ matrix.phpversion }}
-        uses: shivammathur/setup-php@v2
+        uses: https://github.com/shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.phpversion }}
           extensions: openssl
 
       - name: Setup Node ${{ matrix.nodeversion }}
-        uses: actions/setup-node@v6
+        uses: https://github.com/actions/setup-node@v6
         with:
           node-version: ${{ matrix.nodeversion }}
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+        uses: https://github.com/oven-sh/setup-bun@v2
 
       - name: Run PHP isolated Test
         run: php tests/test-encrypt-decrypt.php
