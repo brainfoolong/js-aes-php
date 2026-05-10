@@ -41,7 +41,7 @@ jobs:
         run: node --version && node tests/test-encrypt-decrypt.js
 
       - name: Run BUN isolated Test
-        run: node --version && bun tests/test-encrypt-decrypt.ts
+        run: bun --version && bun tests/test-encrypt-decrypt.ts
 
       - name: Run PHP<->JS Tests
         run: node tests/test-js-php.js && php tests/test-js-php.php
