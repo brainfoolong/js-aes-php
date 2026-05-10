@@ -8,15 +8,15 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - uses: https://github.com/actions/checkout@v6
 
       - name: Setup Node 26.x
-        uses: actions/setup-node@v6
+        uses: https://github.com/actions/setup-node@v6
         with:
           node-version: latest
+
+      - name: Setup Bun
+        uses: https://github.com/oven-sh/setup-bun@v2
 
       - name: Install playwright dependencies
         run: bun install @playwright/test@latest
@@ -30,7 +30,7 @@ jobs:
       - name: Run Playwright tests
         run: bun playwright test
 
-      - uses: actions/upload-artifact@v7
+      - uses: https://github.com/actions/upload-artifact@v7
         if: always()
         with:
           name: playwright-report

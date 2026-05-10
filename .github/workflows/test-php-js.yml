@@ -33,13 +33,13 @@ jobs:
         with:
           node-version: ${{ matrix.nodeversion }}
       - name: Run PHP isolated Test
-        run: php tests/test-encrypt-decrypt.php
+        run: php --version && php tests/test-encrypt-decrypt.php
 
       - name: Run NodeJs isolated Test
-        run: node tests/test-encrypt-decrypt.js
+        run: node --version && node tests/test-encrypt-decrypt.js
 
       - name: Run BUN isolated Test
-        run: bun tests/test-encrypt-decrypt.ts
+        run: node --version && bun tests/test-encrypt-decrypt.ts
 
       - name: Run PHP<->JS Tests
         run: node tests/test-js-php.js && php tests/test-js-php.php
