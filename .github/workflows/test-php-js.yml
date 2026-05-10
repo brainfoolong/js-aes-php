@@ -14,6 +14,14 @@ jobs:
     steps:
       - uses: https://github.com/actions/checkout@v6
 
+      - name: Setup Node requirement for bun
+        uses: https://github.com/actions/setup-node@v6
+        with:
+          node-version: 26.x
+
+      - name: Setup Bun
+        uses: https://github.com/oven-sh/setup-bun@v2
+
       - name: Setup PHP ${{ matrix.phpversion }}
         uses: https://github.com/shivammathur/setup-php@v2
         with:
@@ -24,10 +32,6 @@ jobs:
         uses: https://github.com/actions/setup-node@v6
         with:
           node-version: ${{ matrix.nodeversion }}
-
-      - name: Setup Bun
-        uses: https://github.com/oven-sh/setup-bun@v2
-
       - name: Run PHP isolated Test
         run: php tests/test-encrypt-decrypt.php
 
