@@ -22,7 +22,7 @@ jobs:
         run: bun install @playwright/test@latest
 
       - name: Install Playwright Browsers
-        run: bun --yes playwright install /dev/null 2>&1
+        run: bun --yes playwright install >> /dev/null 2>&1
 
       - name: Start testserver
         run: bun tests/test-browser-server.js &
