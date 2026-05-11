@@ -1,0 +1,23 @@
+name: PHP Tests
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+jobs:
+  tests:
+    strategy:
+      matrix:
+        phpversion: ["8.0", "8.1", "8.2", "8.3", "8.4", "8.5"]
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: https://github.com/actions/checkout@v6
+
+      - name: Setup PHP ${{ matrix.phpversion }}
+        uses: https://github.com/shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.phpversion }}
+          extensions: openssl
+
+      - name: Run Test
+        run: php --version && php tests/test-encrypt-decrypt.php

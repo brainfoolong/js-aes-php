@@ -1,0 +1,19 @@
+name: Bun Tests
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+jobs:
+  tests:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: https://github.com/actions/checkout@v6
+
+      - name: Setup Bun
+        uses: https://github.com/oven-sh/setup-bun@v2
+        with:
+          bun-download-url: "https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip"
+
+      - name: Run Test
+        run: bun --version && bun tests/test-encrypt-decrypt.ts

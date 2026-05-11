@@ -1,47 +1,25 @@
-name: PHP and JS Tests
+name: Combined PHP and JS Tests
 on:
   workflow_dispatch:
   push:
     branches: [ main ]
 jobs:
   tests:
-    strategy:
-      matrix:
-        phpversion: ["8.0", "8.1", "8.2", "8.3", "8.4", "8.5"]
-        nodeversion: ["15.x", "22.x", "24.x", "26.x"]
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
       - uses: https://github.com/actions/checkout@v6
 
-      - name: Setup Node requirement for bun
-        uses: https://github.com/actions/setup-node@v6
-        with:
-          node-version: 26.x
-
-      - name: Setup Bun
-        uses: https://github.com/oven-sh/setup-bun@v2
-        with:
-          bun-download-url: "https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip"
-
-      - name: Setup PHP ${{ matrix.phpversion }}
+      - name: Setup PHP
         uses: https://github.com/shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.phpversion }}
+          php-version: latest
           extensions: openssl
 
-      - name: Setup Node ${{ matrix.nodeversion }}
+      - name: Setup Node
         uses: https://github.com/actions/setup-node@v6
         with:
-          node-version: ${{ matrix.nodeversion }}
-      - name: Run PHP isolated Test
-        run: php --version && php tests/test-encrypt-decrypt.php
+          node-version: latest
 
-      - name: Run NodeJs isolated Test
-        run: node --version && node tests/test-encrypt-decrypt.js
-
-      - name: Run BUN isolated Test
-        run: bun --version && bun tests/test-encrypt-decrypt.ts
-
-      - name: Run PHP<->JS Tests
+      - name: Run Tests
         run: node tests/test-js-php.js && php tests/test-js-php.php

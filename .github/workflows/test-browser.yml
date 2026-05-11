@@ -10,6 +10,11 @@ jobs:
     steps:
       - uses: https://github.com/actions/checkout@v6
 
+      - name: Setup Bun
+        uses: https://github.com/oven-sh/setup-bun@v2
+        with:
+          bun-download-url: "https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip"
+
       - name: Start testserver
         run: bun tests/test-browser-server.js &
 
