@@ -62,6 +62,11 @@ You may wonder if there are alternatives to AES encryption that you can use in P
 
 ### Changelog
 
+#### 1.0.4 - 2026-05-11
+
+This release fixes and issue with running inside bun.
+Also the repository moved to codeberg and github now only mirrors the codeberg repo.
+
 #### 1.0.3 - 2026-03-03
 
 - fixed support for typescript 5.9+ (type errors fixed with casts)
