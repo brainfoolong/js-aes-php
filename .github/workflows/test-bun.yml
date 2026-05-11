@@ -10,15 +10,6 @@ jobs:
     steps:
       - uses: https://github.com/actions/checkout@v6
 
-      # 1. Restore the extracted Bun binary from the cache
-      - name: Cache Bun Toolcache
-        uses: https://github.com/actions/cache@v4
-        with:
-          path: ${{ runner.tool_cache }}/bun
-          # Change "v1" to "v2" if you ever change the bun-download-url and need to bust the cache
-          key: ${{ runner.os }}-bun-custom-url-v1
-
-      # 2. Setup Bun (will skip download if cache was successfully restored)
       - name: Setup Bun
         uses: https://github.com/oven-sh/setup-bun@v2
         with:
