@@ -1,3 +1,6 @@
+> **Note:** This is a mirror, please visit [Codeberg](https://codeberg.org/BrainFooLong/js-aes-php.git) for actual development.
+
+
 [![Browser Tests](https://codeberg.org/BrainFooLong/js-aes-php/actions/workflows/test-browser.yml/badge.svg)](https://codeberg.org/BrainFooLong/js-aes-php/actions?workflow=test-browser.yml)
 [![Bun Tests](https://codeberg.org/BrainFooLong/js-aes-php/actions/workflows/test-bun.yml/badge.svg)](https://codeberg.org/BrainFooLong/js-aes-php/actions?workflow=test-bun.yml)
 [![NodeJs Tests](https://codeberg.org/BrainFooLong/js-aes-php/actions/workflows/test-nodejs.yml/badge.svg)](https://codeberg.org/BrainFooLong/js-aes-php/actions?workflow=test-nodejs.yml)
