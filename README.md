@@ -1,5 +1,8 @@
-[![PHP and JS Tests](https://github.com/brainfoolong/js-aes-php/actions/workflows/test-php-js.yml/badge.svg)](https://github.com/brainfoolong/js-aes-php/actions/workflows/test-php-js.yml)
-[![Browser Tests](https://github.com/brainfoolong/js-aes-php/actions/workflows/test-browser.yml/badge.svg)](https://github.com/brainfoolong/js-aes-php/actions/workflows/test-browser.yml)
+[![Browser Tests](https://codeberg.org/BrainFooLong/js-aes-php/actions/workflows/test-browser.yml/badge.svg)](https://codeberg.org/BrainFooLong/js-aes-php/actions?workflow=test-browser.yml)
+[![Bun Tests](https://codeberg.org/BrainFooLong/js-aes-php/actions/workflows/test-bun.yml/badge.svg)](https://codeberg.org/BrainFooLong/js-aes-php/actions?workflow=test-bun.yml)
+[![NodeJs Tests](https://codeberg.org/BrainFooLong/js-aes-php/actions/workflows/test-nodejs.yml/badge.svg)](https://codeberg.org/BrainFooLong/js-aes-php/actions?workflow=test-nodejs.yml)
+[![PHP Tests](https://codeberg.org/BrainFooLong/js-aes-php/actions/workflows/test-php.yml/badge.svg)](https://codeberg.org/BrainFooLong/js-aes-php/actions?workflow=test-php.yml)
+[![PHP<->JS Tests](https://codeberg.org/BrainFooLong/js-aes-php/actions/workflows/test-php-js.yml/badge.svg)](https://codeberg.org/BrainFooLong/js-aes-php/actions?workflow=test-php-js.yml)
 
 # Slim native AES encryption/decryption on client side with Javascript and on server side with PHP
 
