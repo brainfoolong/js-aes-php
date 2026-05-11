@@ -1,6 +1,6 @@
 {
   "name": "js-aes-php",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Slim native AES encryption/decryption on client side with Javascript and on server side with PHP",
   "scripts": {
     "dist-node": "node ./node_modules/typescript/bin/tsc --project tsconfig.json && node build/dist.js",
