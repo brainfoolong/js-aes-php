@@ -17,14 +17,13 @@ env:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Required to push code to the repository
 
     steps:
       - name: Checkout GitHub repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 0 # Required to rewrite history and force push
+          token: ${{ secrets.WORKFLOW_TOKEN }}
 
       - name: Add Codeberg remote and fetch
         run: |
@@ -39,6 +38,11 @@ jobs:
           
           # Hard reset the GitHub branch to exactly match the Codeberg branch
           git reset --hard codeberg/${{ env.BRANCH_NAME }}
+
+      - name: Enforce only mirror workflow
+        run: |
+          # Delete any test workflows that came from Codeberg
+          rm -rf .github/workflows/test-*
 
       - name: Prepend mirror notice to README
         run: |
