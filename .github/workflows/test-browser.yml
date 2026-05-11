@@ -13,13 +13,8 @@ jobs:
     steps:
       - uses: https://github.com/actions/checkout@v6
 
-      - name: Setup Bun
-        uses: https://github.com/oven-sh/setup-bun@v2
-        with:
-          bun-download-url: "https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip"
-
       - name: Start testserver
-        run: bun tests/test-browser-server.js &
+        run: node tests/test-browser-server.js &
 
       - name: Run Playwright tests
         # Since we are already IN the container, we just run the commands directly
