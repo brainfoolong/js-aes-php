@@ -19,4 +19,4 @@ jobs:
         run: bun tests/test-browser-server.js &
 
       - name: Run Playwright tests
-        run: docker run -i --rm --volume ./:/app --ipc=host mcr.microsoft.com/playwright:v1.59.1-noble /bin/bash -c "cd /app/tests && npm i --yes -D @playwright/test@1.59.1 && npx --yes playwright test"
+        run: docker run -i --rm --volume /workspace/BrainFooLong/js-aes-php:/app --ipc=host mcr.microsoft.com/playwright:v1.59.1-noble /bin/bash -c "cd /app/tests && npm i --yes -D @playwright/test@1.59.1 && npx --yes playwright test"

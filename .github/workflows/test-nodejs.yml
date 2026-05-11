@@ -7,13 +7,13 @@ jobs:
   tests:
     strategy:
       matrix:
-        nodeversion: ["15.x", "22.x", "24.x", "26.x"]
+        nodeversion: ["15.x", "22.x", "24.x", "26.x", "latest"]
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
       - uses: https://github.com/actions/checkout@v6
 
-      - name: Setup Node ${{ matrix.nodeversion }}
+      - name: Setup Node
         uses: https://github.com/actions/setup-node@v6
         with:
           node-version: ${{ matrix.nodeversion }}
