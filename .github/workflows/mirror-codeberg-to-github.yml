@@ -16,6 +16,7 @@ env:
 
 jobs:
   sync:
+    if: github.server_url == 'https://github.com'
     runs-on: ubuntu-latest
 
     steps:
@@ -60,7 +61,7 @@ jobs:
           git add README.md
           
           # Commit the modified README (will gracefully skip if no changes exist)
-          git commit -m "chore: sync mirror and update README" || echo "No changes to commit"
+          git commit -m "chore: sync mirror and update README [skip ci]" || echo "No changes to commit"
           
           # Force push is required because we rewrite the top commit every time it syncs
           git push --force origin HEAD:${{ env.BRANCH_NAME }}
